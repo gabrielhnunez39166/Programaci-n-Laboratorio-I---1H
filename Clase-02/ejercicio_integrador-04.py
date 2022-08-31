@@ -64,9 +64,11 @@ heroes_info = {
 for heroe in heroes_info:
     for nombre in heroes_para_reclutar:
         if (heroe == nombre):
-            caracteristicas_reclutados = {"ID": heroes_info[nombre]["ID"],
-                                        "Origen": heroes_info[nombre]["Origen"],
-                                        "Habilidades": heroes_info[nombre]["Habilidades"],
-                                        "Identidad": heroes_info[nombre]["Identidad"],}
+            caracteristicas_reclutado = {
+            "ID": heroes_info[nombre]["ID"],
+            "Origen": heroes_info[nombre]["Origen"],
+            "Habilidades": heroes_info[nombre]["Habilidades"],
+            "Identidad": heroes_info[nombre]["Identidad"],
+            }
 
-print(caracteristicas_reclutados)
+print(caracteristicas_reclutado)
