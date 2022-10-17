@@ -12,14 +12,14 @@ def cargar_json(path: str) -> list:
         file_json = json.load(file)
     return file_json['heroes']
 
-def cantidad_a_imprimir() -> int:
+def cantidad_a_imprimir(lista: list) -> int:
     '''
     - Recibe mediante un input el numero de heroes que quiere imprimir, si el input recibe un all retorna el maximo de la lista, caso contrario retorna el numero a imprimir.
     - Retorna un int
     '''
     cant_a_imprimir = input('\nIngrese la cantidad a imprimir o ingrese -all- para imprimir la lista completa:\n')
     if cant_a_imprimir == 'all':
-        cant_a_imprimir = 24
+        cant_a_imprimir = len(lista)
     else:
         cant_a_imprimir = int(cant_a_imprimir)
     return cant_a_imprimir
@@ -58,7 +58,7 @@ def imprimir_mensaje(clave: str, promedio: float) -> str:
     mensaje = 'El promedio de {0} es de: {1}'.format(clave, promedio)
     print(mensaje)
 
-def ordenar_lista(lista: list, clave: str, orden: str = 'asc'):
+def ordenar_lista(lista: list, clave: str, orden: str = 'asc') -> list:
     '''
     - Ordena una lista de menor a mayor y si el usuario lo requiere se devuelve la lista inversa
     - Recibe como parametro una lista, la clave la cual queremos ordenar y el orden en el que quedara la lista.
@@ -112,7 +112,7 @@ def calcular_promedio(lista: list, clave: str) -> float:
     cantidad = 0
     contador = len(lista)
 
-    if len(lista) > 1:
+    if len(lista) > 0:
         for elementos in lista:
             cantidad += elementos[clave]
         
@@ -171,7 +171,7 @@ def exportar_a_csv(lista: list, ruta: str):
     '''
     - Exporta a csv la lista ingresada.
     - Recibe como parametro una lista y la ruta donde se exporta el archivo scv.
-    - Retorna el archivo csv.z
+    - Retorna el archivo csv.
     '''
     with open(ruta, 'w') as file:
         for heroe in lista:

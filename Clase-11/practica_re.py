@@ -1,9 +1,6 @@
 ############### EXPRESIONES REGULARES (REGEX) ###############
 #Importar el modulo re
 import re
-from hamcrest import none
-
-from sqlalchemy import false
 
 def validacion_con_regex():
     texto = input('Ingrese un texto: \n > ')

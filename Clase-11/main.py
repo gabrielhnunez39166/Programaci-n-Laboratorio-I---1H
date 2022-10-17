@@ -16,7 +16,7 @@ def funcion_ejecutar_programa():
             print('''\nIngrese una opcion: \n1 - Listar superheroes \n2 - Ordenar lista por altura \n3 - Ordenar lista por peso \n4 - Calcular promedio \n5 - Listar por inteligencia \n6 - Exportar CSV \n7 - Salir''')
             respuesta = input('\n> ')
             if respuesta == '1':
-                limite = funciones.cantidad_a_imprimir()
+                limite = funciones.cantidad_a_imprimir(lista)
                 if limite <= len(lista):
                     lista_a_imprimir = funciones.generar_lista_heroes(lista)[:limite]
                     funciones.imprimir_lista(lista_a_imprimir)
