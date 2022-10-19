@@ -58,7 +58,7 @@ def actualizar_pantalla(lista_donas,personaje,ventana):
                 personaje["health"] = personaje["health"] - 1
                 sonido.encender_audio('1', 'OUCH')
                 restar_dona(dona)
-            #Si el personaje colisiona con la DONA ENVENENADA y este tiene 100 de score o 1 de vida, se pierde el juego (GAME OVER).
+            #Si el personaje colisiona con la DONA ENVENENADA y este tiene 0 de score o 1 de vida, se pierde el juego (GAME OVER).
             elif personaje['score'] == 0 or personaje['health'] == 1:
                 restar_dona(dona)
                 pygame.mixer.stop()
@@ -104,7 +104,7 @@ def crear_lista_donas(cantidad):
             if contador_envenenadas == 10:
                 contador_envenenadas = 0
                 lista_donas_envenenadas.append(crear(x,y,60,60,'cerveza'))
-            elif contador_envenenadas != 15:
+            elif contador_envenenadas != 10:
                 lista_donas_envenenadas.append(crear(x,y,60,60,'envenenada'))
         elif (i % 2 == 1):
             lista_donas.append(crear(x,y,60,60,'crema_rosa'))
